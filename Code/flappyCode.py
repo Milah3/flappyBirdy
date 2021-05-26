@@ -191,8 +191,11 @@ while True:
         display_score('main_game')
 
     else:
+        # theme_song.play()
         display_score('game_over')
         screen.blit(game_over_surface, game_over_rect)
+        # pygame.mixer.Channel(2).set_volume(1)             # Attempt to lower default volume; seems to have no effect
+        pygame.mixer.Channel(2).play(theme_song)
 
 
     # Floor 
@@ -201,8 +204,6 @@ while True:
     if floor_x_pos <= -288:
         floor_x_pos = 0
 
-    theme_song.play()
-    pygame.mixer.Channel(2).play(theme_song)
 
     pygame.display.update()     # updates the images continously to give illusion of movement
     clock.tick(57)             #sets framerate so game isn't too fast or too slow
