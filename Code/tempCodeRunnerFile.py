@@ -1,0 +1,2 @@
+
+        #     die_sound.play()
